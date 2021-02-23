@@ -1,0 +1,303 @@
+body {
+
+    background-color: #e0e0e0;
+    background-image: url(../FirstLayout/img/bg.png);
+    padding:0 5% 0 5% ;
+
+   
+}
+
+h2{
+  font-size: 64px;
+  text-transform: uppercase;
+}
+
+header{
+  background-color:rgb(233, 144, 11);
+  display: flex;
+
+}
+
+/*  навигация и лого   */
+.top-menu {
+  background: rgba(255,255,255,.5);
+  box-shadow: 3px 0 7px rgba(0,0,0,.3);
+  padding: 20px;
+  
+}
+.top-menu:after {
+  content: "";
+  display: inline-flex;
+
+  clear: both;
+}
+
+.navbar-logo {
+  display: inline-flex;
+
+  width: auto;
+  
+}
+
+.menu-main {
+  list-style-type: none;
+
+  float: right;
+  display: inline-flex;
+
+}
+
+
+
+/* стиль текста меню */
+.menu-main a {
+
+  text-decoration: none;
+  font-size: 23px;
+  color: #12100d;
+  padding: 0px 18px;
+
+  /* обводка текста */
+  border-bottom: 5px solid #5757a0;
+  background-color: rgb(237, 202, 253);
+}
+
+.menu-main li {
+  display: inline-flex;
+
+  margin-right: 25px;
+
+}
+
+
+/* цвет наведение на меню */
+.menu-main a:hover {
+  background-color: rgb(163, 11, 233);
+}
+
+
+
+/* при сужении всё в столб с выравниванием на ширину лого */
+@media (max-width: 720px) {
+  .menu-main {
+    float: none;
+    padding-top: 20px;
+  }
+  .top-menu {
+    text-align: center;
+    padding: 20px 0 0 0;
+  }
+  .menu-main a {padding: 0 10px;}
+  .menu-main a:before {transform: rotate(45deg) translateX(-6px);}
+
+  /* .menu-main li {display: flex;} */
+
+}
+
+
+/* ----- слайдер ----- */
+#slides{
+  position: relative;
+  height: 150px;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.showing{
+  opacity: 1;
+  z-index: 2;
+}
+
+
+
+.slide{
+  padding: 40px;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+}
+
+
+
+
+
+/* ----- about us ----- */
+
+.about_us {
+  display: flex;
+  text-align: center;
+  padding: 5% 0 10% 0;
+  background-color:rgba(55, 37, 37, 0.5);
+}
+
+.about_us h2 {
+  color: #222221;
+  
+}
+
+.about_text {
+  display: inline-flex;
+  font-size: 30px;
+
+  background-color:rgb(32, 145, 87);
+  width: 70%;
+
+}
+
+
+
+
+/*  ----- Tour ----- */
+
+.tour {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.container-tour{
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+
+
+  background-color: rgb(237, 202, 253);
+
+}
+
+
+.tout-text{
+  display: inline-flex;
+  font-size: 30px;
+  background-color: rgb(233, 144, 11);
+  width: 80%;
+  text-align: center;
+}
+
+
+.tour h2 {
+
+  color: #1e5a7c;
+
+  
+}
+
+
+
+/* настройка карточек */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+
+.card img{
+  border-radius: 75px 0 75px 0;
+
+}
+
+.card {
+  flex: 32%;
+  margin: 5%; 
+  border-radius: 25px;
+  padding: 0 0 5% 0;
+  box-shadow: 0 12px 34px 8px rgba(11, 11, 11, 0.19);
+
+}
+
+.card > ul {
+  list-style: none;
+  padding: 0;
+}
+.card > ul li {
+  width: 90%;
+  margin: 50px auto 0;
+  background: rgba(255,255,255, 0.4);
+  font-size: 27px;
+}
+
+.card > ul li:last-child {
+  font-size: 23px;}
+
+.card button {
+  width: 50%;
+  height: 40px;
+  border: 0;
+  margin-left: 12px;
+  border-radius: 25px;
+
+}
+
+
+/* ----- contact ----- */
+
+.contact {
+  display: flex;
+  text-align: center;
+  padding: 5% 0 10% 0;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+.contact h2 {
+  color: #222221;
+  
+}
+
+.contact_text {
+  display: inline-flex;
+  font-size: 30px;
+
+  background-color:rgb(32, 145, 87);
+  width: 70%;
+
+}
+
+
+
+
+.social_button {
+  display: inline-flex;
+  text-align: center;
+
+  margin: 5%;
+  
+}
+
+.social a {
+  margin: 5%;
+
+}
+
+.facebook a:hover {
+  box-shadow: 0 12px 34px 8px rgba(11, 11, 11, 0.19);
+  
+}
+
+.instagram a:hover {
+  box-shadow: 0 12px 34px 8px rgba(11, 11, 11, 0.19);
+}
+
+.whatsapp a:hover {
+  box-shadow: 0 12px 34px 8px rgba(11, 11, 11, 0.19);
+}
+
+.twitter a:hover {
+  box-shadow: 0 12px 34px 8px rgba(11, 11, 11, 0.19);
+}
+
+
