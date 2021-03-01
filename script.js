@@ -59,5 +59,7 @@ buttonPushForm.addEventListener('click', function(e){
 
   alert( `Выбран тур  << ${nameTour.textContent} >> имя: ${formName.value} телефон: ${formTel.value}`);
 
+  document.documentElement.classList.remove('no-scroll');
+
 })
 
