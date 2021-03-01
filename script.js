@@ -15,11 +15,10 @@ function nextSlide(){
 button.addEventListener('click', nextSlide)
 
 
+
 // ----- модальное окно формы -----
 
 let buttonOpenModals = document.querySelectorAll('.open-modal')
-let modalBg = document.querySelector('.modal-bg')
-
 
 for (let buttonOpenModal of buttonOpenModals) {
   buttonOpenModal.addEventListener('click', function(){
@@ -31,17 +30,25 @@ for (let buttonOpenModal of buttonOpenModals) {
 
 let buttonCloseModals = document.querySelectorAll('.close-modal')
 
+let modalBg = document.querySelector('.modal-bg')
+
 for (let buttonCloseModal of buttonCloseModals) {
   buttonCloseModal.addEventListener('click', function(e){
   e.preventDefault()
     document.querySelector('.modal-bg').style.display="none"
     document.documentElement.classList.remove('no-scroll');
   }
+
 )}
 
+// закрыть при клике на БГ  -  решить , почему закрывает форму при клике на инпут
+// modalBg.addEventListener('click', function(e) {
+//   e.preventDefault()
+//   document.querySelector('.modal-bg').style.display="none"
+//   document.documentElement.classList.remove('no-scroll');
+// })
 
-// отправить
-
+// отправить форму
 let buttonPushForm = document.querySelector('#buttonPushForm')
 let formName = document.querySelector('#formName')
 let formTel = document.querySelector('#formTel')
@@ -53,9 +60,6 @@ buttonPushForm.addEventListener('click', function(e){
   e.preventDefault()
   document.querySelector('.modal-bg').style.display="none"
 
-  if (nameTour.textContent == 5) {
-    document.querySelector('.modal').style.width="100px"
-  }
 
   alert( `Выбран тур  << ${nameTour.textContent} >> имя: ${formName.value} телефон: ${formTel.value}`);
 
@@ -63,3 +67,32 @@ buttonPushForm.addEventListener('click', function(e){
 
 })
 
+// проверка на кол-во симв в имя
+formName.addEventListener('keyup', function(e){
+  e.preventDefault()
+
+  if (formName.value.length >=5 && formName.value.length <=15) {
+    document.querySelector('#formName').style.borderColor="green"
+  } else {document.querySelector('#formName').style.borderColor="red";}
+
+      //проверка на что бы имя и тел = true
+  if (formName.style.borderColor==="green" && formTel.style.borderColor==="green") {
+    buttonPushForm.style.pointerEvents="auto";
+  } else { console.log('error');}
+
+})
+
+// проверка на кол-во симв в тел
+formTel.addEventListener('keyup', function(e){
+  e.preventDefault()
+
+  if (formTel.value.length == 11) {
+    document.querySelector('#formTel').style.borderColor="green"
+  } else {document.querySelector('#formTel').style.borderColor="red";}
+
+      //проверка на что бы имя и тел = true
+  if (formName.style.borderColor==="green" && formTel.style.borderColor==="green") {
+    buttonPushForm.style.pointerEvents="auto";
+  } else { console.log('error');}
+
+})

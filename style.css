@@ -320,7 +320,7 @@ header{
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 600px;
+  width: 400px;
   background: #fff;
   transform: translate(-50%, -50%);
   padding-top: 60px;
@@ -357,6 +357,9 @@ header{
   background: #000000;
   color: #ffffff;
   cursor: pointer;
+  /* отключить кнопку */
+  pointer-events: none;
+
 }
 
 /* запрет страницы на скролл */
