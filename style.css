@@ -3,13 +3,10 @@ body {
 
     background-color: #e0e0e0;
     background-image: url(../FirstLayout/img/bg.png);
-    padding:0 5% 0 5% ;
 }
 
-header{
-  background-color:rgb(233, 144, 11);
-  display: flex;
-
+a {
+  text-decoration: none;
 }
 
 h2{
@@ -35,142 +32,151 @@ button:hover {
 
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 
-/*  навигация и лого   */
-.top-menu {
+/* Header -> навигация и лого   */
+
+header{
+  display: flex;
+
+  background: url(../FirstLayout/img/group1/bg-top.jpg)center / cover no-repeat #666;
+
+  min-height: 280px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+#topbar {
+  width: 100%;  
+
   background: rgba(255,255,255,.5);
   box-shadow: 3px 0 7px rgba(0,0,0,.3);
-  padding: 20px;
 
-
-    position: fixed;
-    z-index: 3;
+  position: fixed;
+  top: 0;
+  z-index: 999;
   
 }
-.top-menu:after {
-  content: "";
-  display: inline-flex;
 
-  clear: both;
-}
 
 .navbar-logo {
   display: inline-flex;
-
   width: auto;
-  
 }
 
-.menu-main {
-  list-style-type: none;
 
-  float: right;
+.menu li {
   display: inline-flex;
+  
+  text-transform: uppercase;
+  float: center;
 
 }
-
-
 
 /* стиль текста меню */
-.menu-main a {
-
-  text-decoration: none;
+.menu li a {
   font-size: 23px;
   color: #12100d;
-  padding: 0px 18px;
+  display: block;
+  padding: 15px;
 
 }
-
-.menu-main li {
-  display: inline-flex;
-
-  margin-right: 25px;
-
-}
-
 
 /* цвет наведение на меню */
-.menu-main a:hover {
+.menu li a:hover {
   -webkit-transition: all 1s ease-in-out;
-  background-color: rgba(245, 212, 78, 0.137);
+  background-color: rgba(243, 36, 74, 0.7);
   border-radius: 25px;
-  
-
 }
 
 
 
 /* при сужении всё в столб с выравниванием на ширину лого */
 @media (max-width: 720px) {
-  .menu-main {
-    float: none;
-    padding-top: 20px;
+  .menu{
+    font-size: 18px;
+      padding-left: 5px;
+      padding-right: 5px;    float: none;
+      padding-top: 20px;
+
   }
-  .top-menu {
+
+  .navbar-logo {
+    width: 50%;
+    height: 50%;
+  }
+
+  #topbar{
     text-align: center;
     padding: 20px 0 0 0;
   }
-  .menu-main a {padding: 0 10px;}
-  .menu-main a:before {transform: rotate(45deg) translateX(-6px);}
+}
 
+
+
+/* ----- test slider ----- */
+
+
+.sliders {
+  width: 100%;
+  max-width: 50%;
 
 }
 
 
-/* ----- слайдер ----- */
-.sliders  {
-  text-align: center;
-}
-
-#slides{
-  display: flex;
-  /* position: relative; */
-  width: auto;
-  height: auto;
-  /* padding: 0px; */
-  /* margin: 0px; */
-  /* list-style-type: none; */
-
-  /* flex-wrap: wrap; */
-  justify-content: center;
-  /* align-items: center; */
-  min-height: 75vh;
-
+.sliders-list {
   margin: 5%;
-}
-
-.sliders button {
-  width: 25%;
-  height: 40px;
-  margin: 0 0 1% 0;
-  background-color:rgb(233, 144, 11);
-
-}
-.slide{
+  padding: 0;
+  list-style-type: none;
+  position: relative;
   
-  /* width: 700px; */
-  /* height: 380px; */
-  position: absolute;
-  /* left: 0px; */
-  /* top: 0px; */
-  /* width: 100%; */
-  /* height: 100%; */
-  opacity: 0;
-  z-index: 1;
-  /* padding: 20px; */
-  box-sizing: border-box;
-  color: #fff;
+  display: flex;
+}
+
+.slide {
+  display: none;
 }
 
 .showing{
-  opacity: 1;
-  z-index: 2;
+  display: list-item;
 }
 
+/* картинка слайда */
+.slide img{
+  z-index: 2;
+  left: 5%;
+  top: 5%;
+
+}
+
+/*  кнопка переключения слайдов */
+
+.sliders-list button {
+  width: 22px;
+  height: 40px;
+  border: 0;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 4;
+
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  background: url("/FirstLayout/img/slides/arrow-right.png") no-repeat;
 
 
+}
 
+#arrowRight:hover {
+  opacity: 1.0;
+  transform: translateX(5px);
+  -webkit-transition: all 1s ease-in-out;
+}
 
 
 /* ----- about us ----- */
@@ -178,23 +184,19 @@ button:hover {
 .about_us {
   display: flex;
   text-align: center;
-  padding: 5% 0 10% 0;
+  padding: 1% 0 3% 0;
+  background-color:#fff;
 }
 
 .about_us h2 {
   color: #222221;
-  
 }
 
 .about_text {
   display: inline-flex;
   font-size: 30px;
-
   width: 70%;
-
 }
-
-
 
 
 /*  ----- Tour ----- */
@@ -203,15 +205,13 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
+
 .container-tour{
   text-align: center;
   width: 100%;
   max-width: 100%;
-
 }
-
 
 .tout-text{
   display: inline-flex;
@@ -220,48 +220,39 @@ button:hover {
   text-align: center;
 }
 
-
 .tour h2 {
-
   color: #1e5a7c;
-
-  
 }
 
 
 
 /* настройка карточек */
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  
-}
-
-.card img{
-  border-radius: 5px;
 
 }
 
 .card {
-  flex: 32%;
+  width: 25%;
   margin: 5%; 
   border-radius: 0 0 25% 25%;
-  padding: 0 0 5% 0;
+  padding: 0 0 2% 0;
   box-shadow: 0 12px 34px 8px rgba(11, 11, 11, 0.19);
-
+  background-color: #fff;
 }
 
 .card > ul {
   list-style: none;
   padding: 0;
 }
+
 .card > ul li {
   width: 90%;
-  margin: 50px auto 0;
+  margin: 5% auto 0;
   font-size: 27px;
 }
 
@@ -270,9 +261,7 @@ button:hover {
 
 .card button {
   width: 50%;
-  height: 40px;
-
-
+  height: 40px
 }
 
 
@@ -282,7 +271,7 @@ button:hover {
   display: flex;
   text-align: center;
   padding: 5% 0 0 0;
-  background-color:rgba(255, 255, 255, 0.5);
+  background-color: #fff;
 }
 
 .contact h2 {
@@ -293,20 +282,14 @@ button:hover {
 .contact_text {
   display: inline-flex;
   font-size: 30px;
-
   width: 70%;
-
 }
-
-
 
 
 .social_button {
   display: inline-flex;
   text-align: center;
-
   margin: 5%;
-  
 }
 
 .social a:hover {
@@ -316,7 +299,67 @@ button:hover {
 
   transform: translateY(-5px);
   -webkit-transition: all 1s ease-in-out;
-
-
 }
 
+
+
+/* ----- modal form ----- */
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  display:none;
+  z-index: 999;
+}
+
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  padding-top: 60px;
+  
+}
+
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px; 
+}
+
+.modal img {
+  cursor: pointer;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal form input {
+  width: 60%;
+  border: 2px solid #000000;
+  font-size: 20px;
+  margin-bottom: 30px;
+  height: 40px;
+}
+
+.modal form input[type="submit"] {
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* запрет страницы на скролл */
+.no-scroll {
+  overflow: hidden;
+}

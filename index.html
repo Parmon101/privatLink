@@ -10,32 +10,38 @@
 </head>
 <body>
     
-    
     <header>
-        <nav class="top-menu">
-            <a class="navbar-logo"  href="#"><img width=100% height=100% src="/FirstLayout/img/group1/logo/g1logo.png"  alt="group1logo"></a>
-            <ul class="menu-main">
-                <li><a href="#">Home</a></li>
-                <li><a href="#aboutus">About us</a></li>
-                <li><a href="#tours">Tour</a></li>
-                <li><a href="#contacts">Contact</a></li>
-            </ul>
-        </nav>
+        <div id="topbar">
+            <div class="container">
+                <nav>
+                    <ul class="menu">
+                        <a class="navbar-logo"  href="#"><img width=100% height=100% src="/FirstLayout/img/group1/logo/g1logo.png"  alt="group1logo"></a>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#aboutus">About us</a></li>
+                        <li><a href="#tours">Tour</a></li>
+                        <li><a href="#contacts">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
     </header>
   
-    <div class=sliders>
-        <ul id="slides">
-            <li class="slide showing">
-                <img width=100% height=100% src="/FirstLayout/img/group4/tourLakeForest.jpg"></li>
-            <li class="slide">
-                <img width=100% height=100% src="/FirstLayout/img/group4/tourLakeMountains.jpg"></li>
-            <li class="slide">
-                <img width=100% height=100% src="/FirstLayout/img/group4/tourSnowMountains.jpg"></li>
-            <li class="slide">
-                <img width=100% height=100% src="/FirstLayout/img/group4/tourGroupHiking.jpg"></li>
-          </ul>
-          <button>click</button>
-    </div>
+    <!-- -----  slider ----- -->
+            <div class="sliders">
+                <ul id='slides' class="sliders-list">
+
+                  <div class="slide showing"><img src="/FirstLayout/img/slides/slide1.jpg" alt="0"><p>slide1</p></div>
+                  <div class="slide"><img src="/FirstLayout/img/slides/slide2.jpg" alt="1"><p>slide2</p></div>
+                  <div class="slide"><img src="/FirstLayout/img/slides/slide3.jpg" alt="2"><p>slide3</p></div>
+                  <div class="slide"><img src="/FirstLayout/img/slides/slide4.jpg" alt="3"><p>slide4</p></div>
+                  <button id="arrowRight"></button>
+              
+                </ul>
+              
+              </div>
+        
+    
 
 
 
@@ -59,48 +65,49 @@
 
             
             <div class="cards">
+
                 <section class="card">
-                    <header> 
-                        <img width=100% height=100% src="/FirstLayout/img/group4/tourLakeMountains.jpg">
-                    </header>
+                    <div class="card-img"> 
+                        <img  src="/FirstLayout/img/group4/tourLakeMountains.jpg">
+                    </div>
                     <ul>
                       <li>Lake in the mountains</li>
                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis vitae tortor nec arcu condimentum ullamcorper quis eget felis.</li>
                     </ul>
-                    <button>Выбрать</button>
+                    <button class="open-modal">Выбрать</button>
                   </section>
                   
                   <section class="card">
-                    <header>
-                        <img width=100% height=100% src="/FirstLayout/img/group4/tourLakeForest.jpg">
-                    </header>
+                    <div class="card-img">
+                        <img  src="/FirstLayout/img/group4/tourLakeForest.jpg">
+                    </div>
                     <ul>
-                      <li>Lake in the forest</li>
+                      <li id="tourName">Lake in the forest</li>
                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis vitae tortor nec arcu condimentum ullamcorper quis eget felis.</li>
                     </ul>
-                    <button>Выбрать</button>
+                    <button class="open-modal">Выбрать</button>
                   </section>
 
                   <section class="card">
-                    <header>
-                        <img width=100% height=100% src="/FirstLayout/img/group4/tourSnowMountains.jpg">
-                    </header>
+                    <div class="card-img">
+                        <img  src="/FirstLayout/img/group4/tourSnowMountains.jpg">
+                    </div>
                     <ul>
                       <li>Snowy mountains</li>
                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis vitae tortor nec arcu condimentum ullamcorper quis eget felis.</li>
                     </ul>
-                    <button>Выбрать</button>
+                    <button class="open-modal">Выбрать</button>
                   </section>
 
                   <section class="card">
-                    <header>
-                        <img width=100% height=100% src="/FirstLayout/img/group4/tourGroupHiking.jpg">
-                    </header>
+                    <div class="card-img">
+                        <img  src="/FirstLayout/img/group4/tourGroupHiking.jpg">
+                    </div>
                     <ul>
                       <li>Group hikking</li>
                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis vitae tortor nec arcu condimentum ullamcorper quis eget felis.</li>
                     </ul>
-                    <button>Выбрать</button>
+                    <button class="open-modal">Выбрать</button>
                   </section>
             </div>
             
@@ -149,6 +156,24 @@
             
         </div>
     </div>
+
+    <!-- ----- modal form ----- -->
+
+    <div class="modal-bg">
+      <div class="modal">
+        <img class="close-modal" src="/FirstLayout/img/close.png" alt="icon">
+        <!-- <a href="#" class="close-modal" >X</a> -->
+        <form action="">
+          <input id="formName" type="text" name="modal-form" placeholder="Ваше имя">
+          <input id="formTel" type="tel" name="" placeholder="Ваш телефон">
+          <input id="buttonPushForm" type="submit" value="Отправить заявку">
+
+        </form>
+      </div>
+
+    </div>
+
+  
     <script src="script.js"></script>
 </body>
 </html>
