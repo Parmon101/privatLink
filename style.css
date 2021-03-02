@@ -165,7 +165,7 @@ header{
   z-index: 4;
 
   position: absolute;
-  right: 10%;
+  right: -50px;
   top: 40%;
   background: url("/FirstLayout/img/slides/arrow-right.png") no-repeat;
 

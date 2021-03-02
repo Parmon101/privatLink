@@ -18,15 +18,29 @@ button.addEventListener('click', nextSlide)
 
 // ----- модальное окно формы -----
 
-let buttonOpenModals = document.querySelectorAll('.open-modal')
+
+let buttonOpenModals = document.querySelectorAll('button')
 
 for (let buttonOpenModal of buttonOpenModals) {
   buttonOpenModal.addEventListener('click', function(){
     document.querySelector('.modal-bg').style.display="block"
     document.documentElement.classList.add('no-scroll');
+
+    
+
+    buttonPushForm.addEventListener('click', function(e){
+      e.preventDefault()
+      // document.querySelector('.modal-bg').style.display="none"
+    
+    
+      alert( `Выбран тур - ${buttonOpenModal.getAttribute('data-id-tour')}, имя: ${formName.value}, телефон: ${formTel.value}`);
+
+    
+      document.documentElement.classList.remove('no-scroll');
+    
+    })
   }
 )}
-
 
 let buttonCloseModals = document.querySelectorAll('.close-modal')
 
@@ -52,26 +66,16 @@ for (let buttonCloseModal of buttonCloseModals) {
 let buttonPushForm = document.querySelector('#buttonPushForm')
 let formName = document.querySelector('#formName')
 let formTel = document.querySelector('#formTel')
-let nameTour = document.querySelector('#tourName')
 
 
 
-buttonPushForm.addEventListener('click', function(e){
-  e.preventDefault()
-  document.querySelector('.modal-bg').style.display="none"
 
-
-  alert( `Выбран тур  << ${nameTour.textContent} >> имя: ${formName.value} телефон: ${formTel.value}`);
-
-  document.documentElement.classList.remove('no-scroll');
-
-})
 
 // проверка на кол-во симв в имя
 formName.addEventListener('keyup', function(e){
   e.preventDefault()
 
-  if (formName.value.length >=5 && formName.value.length <=15) {
+  if (formName.value.length >=3 && formName.value.length <=15) {
     document.querySelector('#formName').style.borderColor="green"
   } else {document.querySelector('#formName').style.borderColor="red";}
 
