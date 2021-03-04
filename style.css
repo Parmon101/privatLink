@@ -355,6 +355,10 @@ header{
   .menu li a {
     padding: 10px;
   }
+  
+  .navbar-logo{
+    width: 30%;
+  }
 
   .card {
     width: 40%;
@@ -374,9 +378,12 @@ header{
     padding-left: 5px;
     padding-right: 5px;
     float: none;
+    
   }
   .menu li a {
     padding: 2px;
+    font-size: 20px;
+    
   }
   .menu li {
     display: flex;
@@ -384,9 +391,8 @@ header{
     justify-content: center;
   }
   .navbar-logo {
-    height: 60%;
-    height: 60%;
-    
+    width: 60%;
+
   }
 
   .about_text{
@@ -403,10 +409,6 @@ header{
 
   }
 
-  /* .contact h2 {
-    font-size: 30px;
-    color: #222221;
-  } */
 
   .contact_text {
     font-size: 20px;
