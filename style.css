@@ -96,36 +96,12 @@ header{
 
 
 
-/* при сужении всё в столб с выравниванием на ширину лого */
-@media (max-width: 720px) {
-  .menu{
-    font-size: 18px;
-      padding-left: 5px;
-      padding-right: 5px;    float: none;
-      padding-top: 20px;
-
-  }
-
-  .navbar-logo {
-    width: 50%;
-    height: 50%;
-  }
-
-  #topbar{
-    text-align: center;
-    padding: 20px 0 0 0;
-  }
-}
-
-
-
 /* ----- test slider ----- */
 
 
 .sliders {
   width: 100%;
   max-width: 50%;
-
 }
 
 
@@ -238,6 +214,7 @@ header{
 
 .card {
   width: 25%;
+  max-width: 100%;
   margin: 5%; 
   border-radius: 0 0 25% 25%;
   padding: 0 0 2% 0;
@@ -257,7 +234,8 @@ header{
 }
 
 .card > ul li:last-child {
-  font-size: 23px;}
+  font-size: 23px;
+}
 
 .card button {
   width: 50%;
@@ -276,7 +254,6 @@ header{
 
 .contact h2 {
   color: #222221;
-  
 }
 
 .contact_text {
@@ -345,6 +322,10 @@ header{
   justify-content: center;
 }
 
+.modal form li{
+  list-style: none;
+}
+
 .modal form input {
   width: 60%;
   border: 2px solid #000000;
@@ -366,3 +347,70 @@ header{
 .no-scroll {
   overflow: hidden;
 }
+
+
+/* при сужении всё в столб с выравниванием на ширину лого */
+@media (max-width: 768px) {
+
+  .menu li a {
+    padding: 10px;
+  }
+
+  .card {
+    width: 40%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  header{
+    min-height: 0px;
+  }
+  h2{
+    font-size: 30px;
+  }
+
+  .menu{
+    padding-left: 5px;
+    padding-right: 5px;
+    float: none;
+  }
+  .menu li a {
+    padding: 2px;
+  }
+  .menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-logo {
+    height: 60%;
+    height: 60%;
+    
+  }
+
+  .about_text{
+    font-size: 20px;
+  }
+
+  .tout-text {
+    font-size: 20px;
+  }
+
+  .card {
+    width: 100%;
+    box-shadow: 0 5px 16px 4px rgba(11, 11, 11, 0.19);
+
+  }
+
+  /* .contact h2 {
+    font-size: 30px;
+    color: #222221;
+  } */
+
+  .contact_text {
+    font-size: 20px;
+    width: 80%;
+  }
+}
+
